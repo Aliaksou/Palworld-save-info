@@ -9,7 +9,7 @@ This little project was made to complete the [host-save-fix](https://github.com/
 
 ## ✨ How to use ?
 
-### 1 ─ Download python 3 on Micorsoft store 
+### 1 ─ Download python 3 on Microsoft store 
 You can run ```python``` in terminal, that will lead directly in the Microsoft store.
 
 Check if it is installed running ```python --version```

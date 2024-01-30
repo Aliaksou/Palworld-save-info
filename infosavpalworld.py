@@ -51,6 +51,34 @@ def print_last_ten_unlocked_recipe_names(json_file):
     print("Last 10 unlocked recipe names:")
     for name in last_ten_names_reversed[-10:]:
         print("- " + name)
+
+def print_technology_point(json_file):
+    # Load the JSON file
+    with open(json_file, 'r') as file:
+        data = json.load(file)
+
+    # Navigate to the 'TechnologyPoint' section
+    technology_point = data.get("root", {}).get("properties", {}).get("SaveData", {}).get("Struct", {}).get("value", {}).get("Struct", {}).get("TechnologyPoint", {}).get("Int", {}).get("value")
+
+    # Check if technology_point is found and print it
+    if technology_point is not None:
+        print(f"Technology Points: {technology_point}")
+    else:
+        print("Technology Point not found in the JSON file.")
+
+def print_purple_technology_point(json_file):
+    # Load the JSON file
+    with open(json_file, 'r') as file:
+        data = json.load(file)
+
+    # Navigate to the 'TechnologyPoint' section
+    technology_point = data.get("root", {}).get("properties", {}).get("SaveData", {}).get("Struct", {}).get("value", {}).get("Struct", {}).get("bossTechnologyPoint", {}).get("Int", {}).get("value")
+
+    # Check if technology_point is found and print it
+    if technology_point is not None:
+        print(f"Purple Technology Points: {technology_point}")
+    else:
+        print("Purple Technology Points not found in the JSON file.")
     
 def print_pal_capture_counts(json_file):
 
@@ -66,6 +94,7 @@ def print_pal_capture_counts(json_file):
         if name and count is not None:
             print(f"{name} : {count}")
 
+
 def main():
     if len(sys.argv) != 3:
         print("Usage: python script.py <path_to_uesave.exe> <path_to_file.sav>")
@@ -79,6 +108,10 @@ def main():
     sav_file_name = os.path.basename(sav_file)
     print()
     print("Info about the save file: " + sav_file_name)
+    print()
+    print_technology_point(json_file)
+    print()
+    print_purple_technology_point(json_file)
     print()
     print_last_ten_unlocked_recipe_names(json_file)
     print()

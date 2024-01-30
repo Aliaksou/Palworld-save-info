@@ -1,7 +1,7 @@
 # Palworld save info
 
 ## 📃 Description
-Given a .sav file, prints the last 10 recipes unlocked by the user and all the pals they captured. It helps identifying which save corresponds to each player when migrating saves from Game pass to Steam.
+Given a .sav file, prints the Technology points, last 10 recipes unlocked by the user and all the pals they captured. It helps identifying which save corresponds to each player when migrating saves from Game pass to Steam.
 
 This little project was made to complete the [host-save-fix](https://github.com/xNul/palworld-host-save-fix) project which helps migrating saves from Game pass to Steam. 
 
